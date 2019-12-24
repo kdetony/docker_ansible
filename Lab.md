@@ -30,9 +30,10 @@ A la Marcha
 ### Creacion de Ambiente
 
 
-1. Crear una instancia en [Play With Docker][https://labs.play-with-docker.com]  ( con las credenciales de Docker hub, pueden hacer el login )
-2. Con la instancia creada, clonar el [repositorio][https://github.com/kdetony/docker_ansible.git] en : /home/ 
-
+1. Crear una instancia en [Play With Docker][Lab]  ( con las credenciales de Docker hub, pueden hacer el login )
+2. Con la instancia creada, clonar el [repositorio][Repo] en : /home/ 
+[Lab]: https://labs.play-with-docker.com
+[Repo]: https://github.com/kdetony/docker_ansible.git
 
 ### Creacion nodo Master 
 
