@@ -98,7 +98,7 @@ validamos:
 
 ### Arquitectura 
 
-![Diagrama_Infra](/ruta/a/la/imagen.jpg "diagrama")
+![Diagrama_Infra](https://github.com/kdetony/docker_ansible/blob/master/images/ansible.png "diagrama")
 
 ### Let's Go 
 
