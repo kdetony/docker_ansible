@@ -12,7 +12,9 @@ Requisitos
 - Conocimientos basicos en Docker ( no excluyente ) 
 - Conocimientos basicos en Linux ( no excluyente )
 - Paciencia
-- Tener cuenta en [Docker Hub][https://hub.docker.com]
+- Tener cuenta en [Docker Hub][Hub]
+
+[Hub]: https://hub.docker.com
 
 Estructura
 ========
