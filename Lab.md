@@ -170,11 +170,11 @@ nodec ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22
 
 Donde: 
 
-– [webserver] -> Nombres de grupos, que se utilizan en la clasificación de los sistemas
-– nodec -> alias del equipo (no es necesario que sea el verdadero nombre del host)
-– ansible_connection -> tipo de conexión, éste puede ser el nombre de cualquiera de los plugins de conexión de ansible(local, docker, …), en nuestro caso SSH.
-– ansible_host -> host a conectar, en nuestro caso la ip 172.17.0.4.
-– ansible_port -> puerto de conexión (en caso de ssh tener otro puerto), en nuestro caso 22
+–[webserver]:  Nombres de grupos, que se utilizan en la clasificación de los sistemas
+–nodec: alias del equipo (no es necesario que sea el verdadero nombre del host)
+–ansible_connection: tipo de conexión, éste puede ser el nombre de cualquiera de los plugins de conexión de ansible(local, docker), en nuestro caso SSH.
+–ansible_host: host a conectar, en nuestro caso la ip 172.17.0.4.
+– ansible_port: puerto de conexión (en caso de ssh tener otro puerto), en nuestro caso 22
 
 Ejecutamos: 
 
@@ -194,7 +194,7 @@ nodec ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22 ansible_use
   tasks:
     - name: Validar la ultima version de VIM 
       yum: name=vim state=latest 
-
+```
 OBS.
 
 Vamos a modificar nuestro arhcivo **hosts**  el cual debe quedar asi: 
