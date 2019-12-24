@@ -1,2 +1,4 @@
-# docker_ansible
-repo docker con ansible, ejemplos variados
+# Docker & Ansible
+Integracion de Ansible con Docker, para la ejecución de playbooks.
+
+
