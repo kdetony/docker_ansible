@@ -41,7 +41,7 @@ A la Marcha
 
 ### Creacion nodo Master 
 
-1. En la carpeta **master**, encontramos un Dockerfile, con el, vamos a crear nuestro nodo master, de la siguiente manera: 
+1. En la carpeta **infra**, encontramos la carpeta **master** y dentro de ella un Dockerfile, con el, vamos a crear nuestro nodo master, de la siguiente manera: 
 
 > docker build -t master . 
 
@@ -65,7 +65,7 @@ OBS.
 
 ### Creacion de nodos Slave 
 
-1. En la carpeta **nodo_centos** encontramos un Dockerfile, con el, vamos a crear nuestro primer nodo slave, de la siguiente manera:
+1. En la carpeta **infra**, encontramos la carpeta **nodo_centos** y dentro de ella, encontramos un Dockerfile, con el, vamos a crear nuestro primer nodo slave, de la siguiente manera:
 
 > docker build -t nodoc .
 
