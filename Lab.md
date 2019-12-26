@@ -162,7 +162,7 @@ nodec ansible_host=172.17.0.4
 
 Ejecutamos:
 
-> ansible -m ping nodoc
+> ansible -m ping nodec
 
 Volvemos a modificar el archivo **hosts** con lo siguiente:
 ```
