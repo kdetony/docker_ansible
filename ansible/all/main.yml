@@ -1,0 +1,20 @@
+---
+- hosts: webserver
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    - name: Instalando Apache
+      yum: name=httpd state=latest
+
+    - name: Copiando index modificado
+      template:
+        src: "files/index.html.j2"
+        dest: "/var/www/html/index.html"
+
+  handlers:
+    - name: Restart Apache
+      service:
+        name: httpd
+        state: restarted

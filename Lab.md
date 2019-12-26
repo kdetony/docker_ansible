@@ -47,7 +47,7 @@ A la Marcha
 
 2. A continuacion, vamos a crear el contenedor de la siguiente manera: 
 
-> docker run -dit -p :22 --name master master
+> docker run -dit -p :22 -p 8080:80 --name master master
 
 3. Vamos a generar las llaves ssh, para ello, entramos al contenedor para ejecutarlo: 
 
@@ -283,20 +283,9 @@ Para hacer un PoC de esto, vamos a instalar apache. Para comenzar, hay que gener
 
 mkdir /etc/ansible/roles/apache && cd /etc/ansible/roles/apache && mkdir files handlers meta templates tasks vars
 
-9. Vemos un ejemplo de **Task** para ello creamos un directorio llamado task y dentro de el **main.yml** 
-```
----
-- name: Instalacion de Apache
-  yum: name=httpd state=latest
-  notify:
-    - start httpd
+8. Vemos un ejemplo de mas **elaborado** para ello, vamos a copiar los directorios: *files*, *vars* y el archivo **main.yml** en el directorio /etc/ansible, acontinuacion ejecutamos lo sgt:
 
-- name: Eliminar el index.html
-  command: rm /var/www/html/index.html
-  register: html_old
-  ignore_errors: True
+> ansible-playbook main.yml 
 
-- name: Subir el index.html que queramos
-  copy: src=index.html dest=/var/www/html mode=0644
-  when: html_old|success
-```
+
+
