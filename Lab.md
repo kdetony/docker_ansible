@@ -96,6 +96,7 @@ Donde **id_pub.rsa** es la llave del servidor master, la cual copiamos en el pun
 
 > ip_nodoc   nodoc 
 > ip_nodou   nodou 
+> ip_master  master
 
 validamos: 
 
@@ -157,23 +158,23 @@ OBS:
 4. Vamos ahora a cambiar el archivo **hosts** con lo siguiente: 
 ```
 [webserver]
-nodec ansible_host=172.17.0.4 
+myweb ansible_host=172.17.0.4 
 ```
 
 Ejecutamos:
 
-> ansible -m ping nodec
+> ansible -m ping myweb
 
 Volvemos a modificar el archivo **hosts** con lo siguiente:
 ```
 [webserver]
-nodec ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22
+myweb ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22
 ```
 Donde: 
 
 -webserver: Nombres de grupos, que se utilizan en la clasificación de los sistemas.
 
--nodec: alias del equipo (no es necesario que sea el verdadero nombre del host).
+-myweb: alias del equipo (no es necesario que sea el verdadero nombre del host).
 
 -ansible_connection: tipo de conexión, éste puede ser el nombre de cualquiera de los plugins de conexión de ansible(local, docker), en nuestro caso SSH.
 
@@ -183,12 +184,12 @@ Donde:
 
 Ejecutamos: 
 
-> ansible -m ping nodec
+> ansible -m ping myweb
 
 6. Pongamos el sgt. ejemplo, las conexión deben efectuarse desde el usuario al cual se le configura la relación de confianza con la conexión SSH, en el caso operar con un usuario distinto al usuario administrador de ansible (root), se puede configurar la conexión de la siguiente forma, para lo cual, volvemos a modificar el archivo **hosts**
 ```
 [webserver]
-nodec ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22 ansible_user=root ansible_ssh_private_key_file=/root/.ssh/id_rsa
+myweb ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22 ansible_user=root ansible_ssh_private_key_file=/root/.ssh/id_rsa
 ```
 5. Vamos ahora a ejecutar nuestro primer playbook, para ello, vamos a crear el archivo: play.yml
 
@@ -221,7 +222,7 @@ Vamos a modificar nuestro arhcivo **hosts**  el cual debe quedar asi:
 172.17.0.3
 
 [webserver]
-nodec ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22
+myweb ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22
 ```
 
 Y ejecutamos nuestro playbook de la siguiente manera: 
