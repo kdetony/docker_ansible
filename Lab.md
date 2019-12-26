@@ -155,19 +155,20 @@ OBS:
 > ansible all -a "uname -a" 
 
 4. Vamos ahora a cambiar el archivo **hosts** con lo siguiente: 
-
+```
 [webserver]
 nodec ansible_host=172.17.0.4 
+```
 
 Ejecutamos:
 
 > ansible -m ping nodoc
 
 Volvemos a modificar el archivo **hosts** con lo siguiente:
-
+```
 [webserver]
 nodec ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22
-
+```
 Donde: 
 
 -webserver: Nombres de grupos, que se utilizan en la clasificación de los sistemas.
@@ -185,11 +186,10 @@ Ejecutamos:
 > ansible -m ping nodec
 
 6. Pongamos el sgt. ejemplo, las conexión deben efectuarse desde el usuario al cual se le configura la relación de confianza con la conexión SSH, en el caso operar con un usuario distinto al usuario administrador de ansible (root), se puede configurar la conexión de la siguiente forma, para lo cual, volvemos a modificar el archivo **hosts**
-
+```
 [webserver]
 nodec ansible_connection=ssh ansible_host=172.17.0.4 ansible_port=22 ansible_user=root ansible_ssh_private_key_file=/root/.ssh/id_rsa
-
-
+```
 5. Vamos ahora a ejecutar nuestro primer playbook, para ello, vamos a crear el archivo: play.yml
 
 ```
